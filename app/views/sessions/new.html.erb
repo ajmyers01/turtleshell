@@ -1,7 +1,7 @@
 <div id="main-content" class="container individual-wrapper">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1 class="individual-wrapper">Log In</h1>
+  <div class="row" style="padding-top: 10%;">
+    <div class="well col-xs-12 col-md-6 col-md-offset-3">
+      <h1 class="individual-wrapper" style="padding-bottom: 10px;">Log In</h1>
       <%= form_for(:session, url: login_path) do |f| %>
         <div class="form-group label-floating">
           <label class="control-label">Email Address</label>
@@ -17,6 +17,7 @@
         </div>
         <div class="btn-wrapper">
           <%= f.submit 'Log in', class: 'btn btn-raised btn-primary' %>
+          <%= link_to "Create an Account", new_user_path %>
         </div>
       <% end %>
     </div>

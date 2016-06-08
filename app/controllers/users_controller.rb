@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
       log_in(@user)
 
       flash[:success] = "#{@user.full_name} has been created."
-      redirect_to request.referer
+      redirect_to root_path
     else
       flash.now[:danger] = "#{@user.errors.full_messages.to_sentence.humanize}."
       render :new
