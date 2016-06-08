@@ -1,0 +1,75 @@
+<div id="main-content" class="container individual-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="individual-wrapper">Create New User</h1>
+      <%= form_for @user do |f| %>
+      <div class="col-xs-12 col-sm-6">
+        <div id="user-info">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">First Name</label>
+                    <%= f.text_field :first_name,
+                             :class => 'form-control',
+                             'data-validators' => %w(notEmpty) %>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Last Name</label>
+                    <%= f.text_field :last_name,
+                           :class => 'form-control',
+                           'data-validators' => %w(notEmpty) %>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div id="account-info">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                  <label class="control-label">Email</label>
+                  <%= f.text_field :email,
+                         :class => 'form-control',
+                         'data-validators' => %w(notEmpty emailAddress) %>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group label-floating">
+                  <label class="control-label">Password</label>
+                  <%= f.password_field :password,
+                                   :class => 'password_field form-control',
+                                   'data-validators' => %w(notEmpty) %>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="form-group label-floating">
+                <label class="control-label">Password Confirmation</label>
+                <%= f.password_field :password_confirmation,
+                               :class => 'password_field form-control',
+                               'data-validators' => %w(notEmpty),
+                               'data-fv-identical' => true,
+                               'data-fv-identical-field' => 'user[password]',
+                               'data-fv-identical-message' => 'Passwords do not match' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="create-btn" class="row">
+          <div class="col-xs-12">
+            <div class="form-actions">
+              <div class="btn-wrapper">
+                <%= submit_tag 'Sign Up',
+                               :type => 'submit',
+                               :class => 'btn btn-raised btn-primary' %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

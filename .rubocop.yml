@@ -1,0 +1,50 @@
+AllCops:
+  Include: []
+  Exclude:
+    - vendor/**/*
+    - coverage/**/*
+    - test/**/*
+    - tmp/**/*
+    - log/**
+    - db/**/*
+    - config/**/*
+    - bin/**/*
+
+LineLength:
+  Max: 150
+
+MethodLength:
+  Max: 30
+
+Documentation:
+  Enabled: false
+
+GuardClause:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Lint/Loop:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Lint/IneffectiveAccessModifier:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Lint/UselessAccessModifier:
+  Enabled: false
