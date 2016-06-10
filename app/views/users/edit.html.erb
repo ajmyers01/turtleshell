@@ -4,6 +4,16 @@
       <h1>Settings</h1>
       <%= render partial: 'users/form',
                  locals: { user: @user } %>
+
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Supervisors</h1>
+      <%= render partial: 'recipients/index',
+                 locals: { recipients: @recipients } %>
+    </div>
+  </div>
+
 </div>
