@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'tasks#index'
 
   get 'home/index'
 
@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   delete 'logout', to: 'sessions#destroy'
 
+  match 'complete_task' => 'tasks#complete_task', :via => :post
+  match 'delete_task' => 'tasks#destroy', :via => :post
+  match 'create_task' => 'tasks#create', :via => :post
+
+  resources :tasks
   resources :users, only: [:create, :edit, :new, :update]
 end

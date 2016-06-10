@@ -4,14 +4,7 @@ namespace :enspire do
       # Default admin user.
       'admin',
       # Ruby team and BAs.
-      'alex.myers',
-      'eric.fox',
-      'kevin.butler',
-      'luke.schutt',
-      'michael.richards',
-      'nathan.heintzeman',
-      'nathan.hubartt',
-      'robert.carmona'
+      'alex.myers'
     ]
 
     users = names.map do |name|
