@@ -8,6 +8,14 @@ class TasksController < ApplicationController
   end
 
   def create
+    @task = Task.new(name: params[:name], description: params[:description], completed: false, user_id: current_user.id)
+    if @task.valid?
+      if @task.save
+        respond_to do |format|
+          format.json { render json: {success: true} }
+        end
+      end
+    end
   end
 
   def complete_task

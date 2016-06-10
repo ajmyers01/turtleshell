@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   match 'complete_task' => 'tasks#complete_task', :via => :post
   match 'delete_task' => 'tasks#destroy', :via => :post
+  match 'create_task' => 'tasks#create', :via => :post
 
   resources :tasks
   resources :users, only: [:create, :edit, :new, :update]
