@@ -4,9 +4,6 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.where(completed: false)
   end
 
-  def new
-  end
-
   def create
     @task = Task.new(name: params[:name], description: params[:description], completed: false, user_id: current_user.id)
     if @task.valid?

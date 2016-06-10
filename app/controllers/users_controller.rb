@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     # TODO: Update to allow administrators to edit other users.
     redirect_to root_url unless params[:id].to_s == @current_user.id.to_s
     @user = @current_user
+    @recipients = current_user.recipients
   end
 
   def update

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   match 'delete_task' => 'tasks#destroy', :via => :post
   match 'create_task' => 'tasks#create', :via => :post
 
+  match 'delete_recipient' => 'recipients#destroy', :via => :post
+  match 'create_recipient' => 'recipients#create', :via => :post
+
   resources :tasks
+  resources :recipients
   resources :users, only: [:create, :edit, :new, :update]
 end
