@@ -1,0 +1,27 @@
+<div id="main-content" class="container individual-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="text-center"><%= current_user.full_name %>'s Reports </h3>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:20px;">
+    <div class="col-xs-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Report</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reports.each do |report| %>
+            <tr>
+              <td><%= link_to "#{report.clean_start_date} - #{report.clean_end_date}", report_path(report.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
