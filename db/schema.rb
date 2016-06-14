@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610010115) do
+ActiveRecord::Schema.define(version: 20160610020408) do
 
   create_table "recipients", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -25,13 +25,24 @@ ActiveRecord::Schema.define(version: 20160610010115) do
 
   add_index "recipients", ["user_id"], name: "index_recipients_on_user_id", using: :btree
 
+  create_table "reports", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
+
   create_table "tasks", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.boolean  "completed",   limit: 1
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "user_id",         limit: 4
+    t.string   "name",            limit: 255
+    t.string   "description",     limit: 255
+    t.boolean  "completed",       limit: 1
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.datetime "completion_date"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree

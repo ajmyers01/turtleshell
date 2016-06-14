@@ -5,7 +5,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(name: params[:name], description: params[:description], completed: false, user_id: current_user.id)
+    @task = Task.new(name: params[:name],
+                     description: params[:description],
+                     completed: false,
+                     user_id: current_user.id)
     if @task.valid?
       if @task.save
         respond_to do |format|
@@ -17,7 +20,8 @@ class TasksController < ApplicationController
 
   def complete_task
     @task = Task.find(params[:completed_task_id].to_i)
-    @task.update_attributes(completed: true)
+    @task.update_attributes(completed: true,
+                     completion_date: Date.today)
     respond_to do |format|
       format.json { render json: {success: true} }
     end
