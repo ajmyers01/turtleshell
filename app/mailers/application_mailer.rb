@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "dev.alex.myers@gmail.com"
+  default from: "support@turtleshell.com"
   layout 'mailer'
 end
