@@ -11,6 +11,8 @@ class ReportsController < ApplicationController
     @wednesday = tasks_for(Report::WEDNESDAY)
     @thursday = tasks_for(Report::THURSDAY)
     @friday = tasks_for(Report::FRIDAY)
+    @user = current_user
+
   end
 
   private

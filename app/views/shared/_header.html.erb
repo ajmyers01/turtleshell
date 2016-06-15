@@ -15,7 +15,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><a href="/"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks</a></li>
-      <li><a href="/reports">Reports</a></li>
+      <li><a href="/reports"><i class="fa fa-list-alt" aria-hidden="true"></i>Reports</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
@@ -23,8 +23,8 @@
         <li><%= link_to 'Sign In', login_path %></li>
       <% end %>
       <% if @current_user.present? %>
-        <li><%= link_to 'Settings', edit_user_path(@current_user) %></li>
-        <li><%= link_to 'Sign Out', logout_path %></li>
+        <li><%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i>Settings'.html_safe, edit_user_path(@current_user) %></li>
+        <li><%= link_to '<i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out'.html_safe, logout_path %></li>
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->

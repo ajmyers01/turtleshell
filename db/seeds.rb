@@ -1,4 +1,4 @@
-Rake::Task['enspire:seed_users'].invoke
+Rake::Task['user:seed'].invoke
 me = User.find(2)
 10.times do
 me.tasks.create(name: "write the code",
