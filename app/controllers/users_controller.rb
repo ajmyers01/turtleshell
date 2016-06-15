@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
+      @user.reports.create(
+        start_date: Date.today.beginning_of_week,
+        end_date: Date.today.end_of_week
+      )
 
       flash[:success] = "#{@user.full_name} has been created."
       redirect_to root_path

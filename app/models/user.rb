@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def secondlatestreport
+    self.reports.order("end_date DESC").offset(1).limit(1).first
+  end
 end

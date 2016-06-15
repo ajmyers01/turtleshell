@@ -25,6 +25,8 @@ gem 'bugsnag'
 gem 'dotenv-rails'
 gem 'stripe', '~> 1.30'
 gem 'font-awesome-sass', '~> 4.6.2'
+gem 'rufus-scheduler'
+
 group :development do
   gem 'quiet_assets'
   gem 'better_errors'

@@ -1,14 +1,12 @@
-namespace :enspire do
-  task seed_users: :environment do
+namespace :user do
+  task seed: :environment do
     names = [
-      # Default admin user.
-      'admin',
-      # Ruby team and BAs.
-      'alex.myers'
+      'myers3162002',
+      'dev.alex.myers'
     ]
 
     users = names.map do |name|
-      email = "#{name}@enspiresoftware.com"
+      email = "#{name}@gmail.com"
       # Skip any users that already exist.
       next if User.find_by(email: email).present?
 

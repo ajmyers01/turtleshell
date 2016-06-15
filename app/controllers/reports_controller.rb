@@ -13,9 +13,6 @@ class ReportsController < ApplicationController
     @friday = tasks_for(Report::FRIDAY)
     @user = current_user
 
-    # Use this for sending weekly reports
-    # ReportMailer.weekly_report(@report, @monday, @tuesday, @wednesday, @thursday, @friday, current_user).deliver_now
-
   end
 
   private
