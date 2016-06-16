@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def largest_priority_number
-    if self.tasks.count > 0
+    if self.tasks.incomplete.count > 0
       self.tasks.incomplete.sort_by {|task| task.priority}.last.priority
     else
       0
