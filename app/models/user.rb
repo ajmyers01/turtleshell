@@ -11,7 +11,11 @@ class User < ActiveRecord::Base
   end
 
   def second_latest_report
-    self.reports.order("end_date DESC").offset(1).limit(1).first
+    if self.reports.count > 1
+      self.reports.order("end_date DESC").offset(1).limit(1).first
+    else
+      self.reports.first
+    end
   end
 
   def largest_priority_number
