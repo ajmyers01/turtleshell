@@ -11,7 +11,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 # This is the server to deploy to
-server ENV["PRODUCTION_SERVER_IP"],
+server '159.203.114.28',
        roles: %w(web app db),
        port: fetch(:port),
        user: fetch(:user),
