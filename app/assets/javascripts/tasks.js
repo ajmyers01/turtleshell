@@ -47,7 +47,6 @@ $( document ).on( 'click', '.js-create-task', function(e) {
     },
     error: function(xhr, textStatus, errorThrown) {
       location.reload();
-      //alert('Could not create this task, Please contact an admin.');
     }
   });
 });

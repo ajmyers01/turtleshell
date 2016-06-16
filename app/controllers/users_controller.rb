@@ -15,6 +15,12 @@ class UsersController < ApplicationController
         end_date: Date.today.end_of_week
       )
 
+      @task = Task.create(name: "My First Task",
+                       description: "Play around with this task!",
+                     completed: false,
+                     user_id: current_user.id,
+                     priority: current_user.largest_priority_number + 1 )
+
       flash[:success] = "#{@user.full_name} has been created."
       redirect_to root_path
     else

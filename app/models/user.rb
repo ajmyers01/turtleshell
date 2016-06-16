@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     if self.tasks.incomplete.count > 0
       self.tasks.incomplete.sort_by {|task| task.priority}.last.priority
     else
-      0
+      return 0
     end
   end
 end
