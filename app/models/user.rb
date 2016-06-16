@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def second_latest_report
-    if self.reports > 1
+    if self.reports.count > 1
       self.reports.order("end_date DESC").offset(1).limit(1).first
     else
       self.reports.first
