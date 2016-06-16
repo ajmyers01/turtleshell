@@ -13,6 +13,7 @@ scheduler.cron '00 10 * * 1' do
 end
 
 scheduler.in '3s' do
+    Report.send_reports
     puts '*******************************'
     puts 'Testing scheduler in production'
     puts '*******************************'
