@@ -10,7 +10,7 @@ class TasksController < ApplicationController
                      description: params[:description],
                      completed: false,
                      user_id: current_user.id,
-                     priority: Task.largest_priority_number + 1 )
+                     priority: current_user.largest_priority_number + 1 )
     if @task.valid?
       if @task.save
         respond_to do |format|
