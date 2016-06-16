@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, ENV["GENESIS_PROJECT_NAME"]
-set :repo_url, ENV["PROJECT_REPO"]
+set :application, 'turtleshell'
+set :repo_url, "git@github.com:ajmyers01/turtleshell.git"
 set :use_sudo, false
 set :bundle_binstubs, nil
 set :assets_roles, %w(web app)
