@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   match 'create_recipient' => 'recipients#create', :via => :post
 
   resources :reports
-  resources :tasks
+  resources :tasks do
+    put :sort, on: :collection
+  end
   resources :recipients
   resources :users, only: [:create, :edit, :new, :update]
 end

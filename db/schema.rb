@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610020408) do
+ActiveRecord::Schema.define(version: 20160615235713) do
 
   create_table "recipients", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160610020408) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.datetime "completion_date"
+    t.integer  "priority",        limit: 4
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
