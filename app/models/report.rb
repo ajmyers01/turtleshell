@@ -29,7 +29,7 @@ class Report < ActiveRecord::Base
 
   def self.send_reports
     User.all.each do |user|
-      report = user.secondlatestreport
+      report = user.second_latest_report
       @monday = tasks_for(Report::MONDAY, user)
       @tuesday = tasks_for(Report::TUESDAY, user)
       @wednesday = tasks_for(Report::WEDNESDAY, user)
@@ -41,7 +41,7 @@ class Report < ActiveRecord::Base
 
   def self.weekday_date(weekday, user)
     weekday = Array(weekday)
-    report = user.secondlatestreport
+    report = user.second_latest_report
     (report.start_date.to_date..report.end_date.to_date).to_a.select {|k| weekday.to_a.include?(k.wday)}
   end
 

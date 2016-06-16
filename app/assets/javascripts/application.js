@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.sortable
 //= require bootstrap
 //= require material-kit
 //= require_tree ../../../vendor/assets/javascripts

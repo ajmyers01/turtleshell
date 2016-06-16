@@ -10,7 +10,15 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def secondlatestreport
+  def second_latest_report
     self.reports.order("end_date DESC").offset(1).limit(1).first
+  end
+
+  def largest_priority_number
+    if self.tasks.incomplete.count > 0
+      self.tasks.incomplete.sort_by {|task| task.priority}.last.priority
+    else
+      0
+    end
   end
 end
