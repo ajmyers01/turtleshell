@@ -1,11 +1,12 @@
 Rake::Task['user:seed'].invoke
-me = User.find(2)
+User.all.each do |u|
 10.times do
-me.tasks.create(name: "write the code",
+u.tasks.create(name: "write the code",
                 description: "finish writing all the code for this project",
                 completed: false )
 end
-me.reports.create(
+u.reports.create(
   start_date: Date.today.beginning_of_week,
   end_date: Date.today.end_of_week
 )
+end

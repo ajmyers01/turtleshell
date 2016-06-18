@@ -13,6 +13,15 @@ class ReportsController < ApplicationController
     @friday = tasks_for(Report::FRIDAY)
     @user = current_user
 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name",
+          template: "reports/report_pdf.html.erb",
+          viewport_size: '1280x1024',
+          margin: { bottom: 25, top: 25 }
+      end
+    end
   end
 
   private

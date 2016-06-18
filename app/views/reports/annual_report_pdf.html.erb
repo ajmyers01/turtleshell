@@ -1,9 +1,8 @@
+<%= wicked_pdf_stylesheet_link_tag "pdf" -%>
 <div id="main-content" class="container individual-wrapper">
   <div class="row">
     <div class="col-xs-12">
-
-      <%= link_to "<i class='fa fa-download btn btn-default btn-raised brn-fab btn-fab-mini btn-round pull-right' aria-hidden='true'></i>".html_safe, report_path(@report.id, :format => :pdf) %>
-      <h3 class="text-center"><%= current_user.full_name %>'s Weekly Report - <%= "#{@report.clean_start_date} - #{@report.clean_end_date}" %> </h3>
+      <h3 class="text-center"><%= current_user.full_name %>'s Annual Report - <%= "#{@report.clean_start_date} - #{@report.clean_end_date}" %> </h3>
     </div>
   </div>
 

@@ -11,12 +11,14 @@
         <thead>
           <tr>
             <th>Report</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <% @reports.each do |report| %>
             <tr>
               <td><%= link_to "#{report.clean_start_date} - #{report.clean_end_date}", report_path(report.id) %></td>
+              <td><%= link_to "<i class='fa fa-file-pdf-o' aria-hidden='true'></i> Download".html_safe, report_path(report.id, :format => :pdf) %></td>
             </tr>
           <% end %>
         </tbody>
