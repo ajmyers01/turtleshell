@@ -15,6 +15,11 @@ class UsersController < ApplicationController
         end_date: Date.today.end_of_week
       )
 
+      @user.yearly_reports.create(
+        start_date: Date.today.beginning_of_year,
+        end_date: Date.today.end_of_year
+      )
+
       @task = Task.create(name: "My First Task",
                        description: "Play around with this task!",
                      completed: false,
@@ -30,14 +35,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # TODO: Update to allow administrators to edit other users.
     redirect_to root_url unless params[:id].to_s == @current_user.id.to_s
     @user = @current_user
     @recipients = current_user.recipients
   end
 
   def update
-    # TODO: Update to allow administrators to edit other users.
     redirect_to root_url unless params[:id].to_s == @current_user.id.to_s
     @user = @current_user
 

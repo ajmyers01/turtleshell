@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   match 'create_recipient' => 'recipients#create', :via => :post
 
   resources :reports
+  resources :yearly_reports
   resources :tasks do
     put :sort, on: :collection
   end

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
   has_many :recipients, dependent: :destroy
   has_many :reports, dependent: :destroy
+  has_many :yearly_reports, dependent: :destroy
 
   has_secure_password
   validates :password, confirmation: true
