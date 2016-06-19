@@ -12,4 +12,10 @@ scheduler.cron '00 10 * * 1' do
   Report.send_reports
 end
 
+# First of the Year create new annual reports
+scheduler.cron '0 0 1 1 *' do
+  Rails.logger.info "Generating reports"
+  YearlyReport.generate_reports
+end
+
 #scheduler.join

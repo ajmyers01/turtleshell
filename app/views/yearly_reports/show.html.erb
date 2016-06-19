@@ -1,0 +1,30 @@
+<div id="main-content" class="container individual-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <%= link_to "<i class='fa fa-download btn btn-default btn-raised brn-fab btn-fab-mini btn-round pull-right' aria-hidden='true'></i>".html_safe, yearly_report_path(@report.id, :format => :pdf) %>
+      <h3 class="text-center"><%= current_user.full_name %>'s Annual Report - <%= "#{@report.clean_start_date}" %> </h3>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:20px;">
+    <div class="col-xs-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Date Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |t| %>
+            <tr>
+              <td><%= "#{t.name} - #{t.description}" %></td>
+              <td><%= "#{t.completion_date}" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

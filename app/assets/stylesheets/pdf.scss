@@ -1,0 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@include make-grid(sm);
+@include make-grid(md);
+@include make-grid(lg);

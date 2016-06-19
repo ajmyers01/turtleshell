@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-right">
-        <a href="/yearly_reports"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Annual Reports</a>
+        <a href="/reports"><i class="fa fa-list-alt" aria-hidden="true"></i> Weekly Reports</a>
       </div>
-      <h3 class="text-center"><%= current_user.full_name %>'s Reports </h3>
+      <h3 class="text-center"><%= current_user.full_name %>'s Yearly Reports </h3>
     </div>
   </div>
 
@@ -20,8 +20,8 @@
         <tbody>
           <% @reports.each do |report| %>
             <tr>
-              <td><%= link_to "#{report.clean_start_date} - #{report.clean_end_date}", report_path(report.id) %></td>
-              <td><%= link_to "<i class='fa fa-file-pdf-o' aria-hidden='true'></i> Download".html_safe, report_path(report.id, :format => :pdf) %></td>
+              <td><%= link_to "#{report.clean_start_date}", yearly_report_path(report.id) %></td>
+              <td><%= link_to "<i class='fa fa-file-pdf-o' aria-hidden='true'></i> Download".html_safe, yearly_report_path(report.id, :format => :pdf) %></td>
             </tr>
           <% end %>
         </tbody>
