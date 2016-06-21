@@ -44,14 +44,9 @@ $( document ).on( 'click', '.js-create-task', function(e) {
     data: { name: task_name, description: task_description },
     dataType: 'html',
     success: function(xhr, textStatus) {
-      setTimeout(function(){
-        location.reload();
-      }, 2000);
+      $('.js-task-list').empty().append(JSON.parse(xhr).partial);
     },
     error: function(xhr, textStatus, errorThrown) {
-      setTimeout(function(){
-        location.reload();
-      }, 2000);
     }
   });
 });
