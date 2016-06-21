@@ -55,6 +55,7 @@ $( document ).on( 'click', '.js-create-task', function(e) {
       console.log(xhr);
       console.log(textStatus);
       console.log(errorThrown);
+      debugger
     }
   });
 });
