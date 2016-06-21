@@ -44,10 +44,17 @@ $( document ).on( 'click', '.js-create-task', function(e) {
     data: { name: task_name, description: task_description },
     dataType: 'html',
     success: function(xhr, textStatus) {
-      location.reload();
+      //location.reload();
+      console.log('success');
+      console.log(xhr);
+      console.log(textStatus);
     },
     error: function(xhr, textStatus, errorThrown) {
-      location.reload();
+      //location.reload();
+      console.log('error');
+      console.log(xhr);
+      console.log(textStatus);
+      console.log(errorThrown);
     }
   });
 });
