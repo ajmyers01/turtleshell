@@ -1,0 +1,12 @@
+<% @tasks.each do |task| %>
+  <tr class="panel panel-default js-habit-<%= task.id %>" data-pos=<%= task.priority %> data-id="<%= task.id %>" >
+    <td class="td-actions text-right ui-state-default">
+      <div class="btn btn-success btn-raised btn-xs js-complete-task" type="button"id="<%= task.id %>"> <i class="fa fa-check"></i> </div>
+    </td>
+    <td class="ui-state-default"><%= task.name %></td>
+    <td class="ui-state-default"><%= task.description %></td>
+    <td class="td-actions text-right ui-state-default">
+      <div class="btn btn-danger btn-raised btn-xs js-delete-task" type="button"id="<%= task.id %>"> <i class="fa fa-times"></i> </div>
+    </td>
+  </tr>
+<% end %>

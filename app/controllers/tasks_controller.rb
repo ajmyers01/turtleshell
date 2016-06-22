@@ -11,13 +11,15 @@ class TasksController < ApplicationController
                      completed: false,
                      user_id: current_user.id,
                      priority: current_user.largest_priority_number + 1 )
-    if @task.valid?
-      if @task.save
-        respond_to do |format|
-          format.json { render json: {success: true} }
-        end
+
+    if @task.save
+      @tasks = current_user.tasks.where(completed: false)
+      partial = render_to_string(partial: 'tasks/task_list')
+      respond_to do |format|
+        format.json { render json: {success: true, partial: partial} }
       end
     end
+
   end
 
   def complete_task
