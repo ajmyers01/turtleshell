@@ -4,7 +4,7 @@ class YearlyReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = YearlyReport.find(params[:id])
     @tasks = current_user.tasks.where(completion_date: @report.start_date..@report.end_date)
     @user = current_user
 
