@@ -8,13 +8,18 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/"><%= ENV["GENESIS_PROJECT_NAME"].humanize %></a>
+  <% if logged_in? %>
+    <a class="navbar-brand" href="/tasks">Turtle-Shell.io</a>
+  <% else %>
+    <a class="navbar-brand" href="/">Turtle-Shell.io</a>
+  <% end %>
   </div>
 
+  <% if logged_in? %>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href="/"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks</a></li>
+      <li><a href="/tasks"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks</a></li>
       <li><a href="/reports"><i class="fa fa-list-alt" aria-hidden="true"></i>Reports</a></li>
     </ul>
 
@@ -28,5 +33,7 @@
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
+
+  <% end %>
 </div><!-- /.container-fluid -->
 </nav>

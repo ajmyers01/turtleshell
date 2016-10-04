@@ -9,9 +9,7 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
-  <% if logged_in? %>
-    <%= render partial: 'shared/header' %>
-  <% end %>
+  <%= render partial: 'shared/header' %>
   <div class="container">
     <%= render partial: 'shared/flash_partial' %>
   </div>
